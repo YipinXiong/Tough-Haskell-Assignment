@@ -6,11 +6,14 @@ module Project1 (elementPosition, everyNth, elementBefore) where
         | elt == x = 1
         | otherwise = 1 + elementPosition elt xs
 
+
+
     everyNth :: Int -> [t] -> [t]
     everyNth n lst 
         | n == 0 = error "n cannot be zero"
         | (length lst) < n = []
         | otherwise = (lst !! (n-1)) : (everyNth n (drop n lst))
+
 
 
     elementBefore :: (Eq a) => a -> [a] -> Maybe a
